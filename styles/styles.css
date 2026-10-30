@@ -1,0 +1,306 @@
+/* ==========================================================================
+   Campus Bites - Shared Master Stylesheet
+   ========================================================================== */
+
+/* --- CSS Variables / Design Tokens --- */
+:root {
+  --primary-color: #8c1d40;      /* Campus Maroon */
+  --primary-hover: #6b1430;
+  --secondary-color: #ffc72c;    /* Warm Gold/Yellow */
+  --secondary-hover: #e0ac1b;
+  --dark-color: #222222;
+  --light-color: #f8f9fa;
+  --white: #ffffff;
+  --gray-light: #e9ecef;
+  --gray-border: #cccccc;
+  --text-muted: #6c757d;
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --transition-speed: 0.3s;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --radius: 8px;
+}
+
+/* --- Global Reset & General Settings --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+ul {
+  list-style: none;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--white);
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: var(--secondary-color);
+  color: var(--dark-color);
+}
+
+/* --- Hero Banner --- */
+.hero {
+  background: linear-gradient(rgba(140, 29, 64, 0.85), rgba(34, 34, 34, 0.85)), 
+              url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  color: var(--white);
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.8rem;
+  color: var(--secondary-color);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 650px;
+  margin: 0 auto 1.5rem auto;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-align: center;
+  transition: background-color var(--transition-speed), transform 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--secondary-color);
+  color: var(--dark-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-hover);
+  color: var(--dark-color);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-hover);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* --- Layout Containers & Page Sections --- */
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  flex: 1;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  margin: 0.5rem auto 0 auto;
+}
+
+/* --- Reusable Grid & Cards --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background-color: var(--white);
+  border: 1px solid var(--gray-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+  transition: transform var(--transition-speed);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* --- Info Boxes (Hours & Location) --- */
+.info-box {
+  background-color: var(--white);
+  border-left: 5px solid var(--primary-color);
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--box-shadow);
+}
+
+.info-box h4 {
+  color: var(--primary-color);
+  margin-bottom: 0.3rem;
+}
+
+/* --- Forms (For feedback.html) --- */
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid var(--gray-border);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* --- Badges & Price Tags (For menu.html and deals.html) --- */
+.price-tag {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--dark-color);
+  font-weight: bold;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: var(--dark-color);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin-bottom: 0.3rem;
+}
+
+footer span {
+  color: var(--secondary-color);
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
