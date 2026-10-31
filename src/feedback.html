@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Bites - Feedback & Contact | University Cafeteria</title>
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        🍔 Campus Bites
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="deals.html">Deals</a></li>
+        <li><a href="order.html">How to Order</a></li>
+        <li><a href="feedback.html" class="active">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Feedback & Contact Us</h1>
+    <p>We value your opinions! Help us improve food quality, service, and menu options at Campus Bites.</p>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+    <h2 class="section-title">Get in Touch</h2>
+
+    <!-- Contact Info & Feedback Form Layout -->
+    <div class="grid">
+
+      <!-- Contact Information Cards -->
+      <div>
+        <div class="info-box">
+          <h4>📍 Cafeteria Location</h4>
+          <p>Ground Floor, Student Center Building, UCP Campus, Lahore.</p>
+        </div>
+
+        <div class="info-box">
+          <h4>📞 Phone & Email</h4>
+          <p><strong>Phone:</strong> +92 (042) 111-000-827</p>
+          <p><strong>Email:</strong> cafeteria@ucp.edu.pk</p>
+        </div>
+
+        <div class="info-box">
+          <h4>⏰ Response Hours</h4>
+          <p>Monday to Friday: 9:00 AM – 4:00 PM</p>
+        </div>
+      </div>
+
+      <!-- Static HTML Feedback Form -->
+      <div class="card">
+        <h3>Send Your Feedback</h3>
+        <p style="margin-bottom: 1rem;">Fill out the form below to share your suggestions or concerns.</p>
+
+        <form action="#" method="post" onsubmit="event.preventDefault(); alert('Thank you for your feedback!');">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">University Email</label>
+            <input type="email" id="email" name="email" placeholder="l1f23bsseXXXX@ucp.edu.pk" required>
+          </div>
+
+          <div class="form-group">
+            <label for="category">Feedback Topic</label>
+            <select id="category" name="category" style="width:100%; padding:0.7rem; border:1px solid var(--gray-border); border-radius:4px;">
+              <option value="food">Food Quality & Taste</option>
+              <option value="service">Counter Staff Service</option>
+              <option value="pricing">Prices & Combo Suggestions</option>
+              <option value="hygiene">Cleanliness & Seating</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message / Suggestions</label>
+            <textarea id="message" name="message" rows="4" placeholder="Type your feedback here..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-secondary" style="width: 100%;">Submit Feedback</button>
+        </form>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 <span>Campus Bites</span> - University of Central Punjab. All rights reserved.</p>
+    <p>DevOps Fundamentals (SEST4663) Project</p>
+  </footer>
+
+</body>
+</html>
